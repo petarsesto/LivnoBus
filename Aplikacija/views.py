@@ -7,6 +7,21 @@ def home(request):
 
 from .models import VozniRed
 
-def vozni_red(request):
+def vozniRed(request):
     redovi = VozniRed.objects.all()
     return render(request, 'vozniRed.html', {'redovi': redovi})
+
+def kontakt(request):
+    return render(request, 'kontakt.html')
+
+def oNama(request):
+    return render(request, 'oNama.html')
+
+def kupiKartu(request):
+    return render(request, 'kupiKartu.html')
+
+def liTaxi(request):
+    return render(request, 'liTaxi.html')
+
+def destinacije(request):
+    return render(request, 'destinacije.html')
