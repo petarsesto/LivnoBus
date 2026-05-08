@@ -2,10 +2,24 @@
 
 {% block content %}
 
-<h1>Linije</h1>
+<h1>🚍 Linije</h1>
 
 {% for linija in linije %}
-    <div>
-        {{ linija.polaziste }} → {{ linija.odrediste }}
+    <div style="
+        background: white;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    ">
+        <strong>
+            {{ linija.polaziste }} → {{ linija.odrediste }}
+        </strong>
+        <br>
+        {{ linija.naziv }}
     </div>
+{% empty %}
+    <p>Nema unesenih linija.</p>
+{% endfor %}
+
 {% endblock %}
