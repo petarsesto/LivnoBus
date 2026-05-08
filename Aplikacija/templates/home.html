@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LivnoBus</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f2f4f8;
+        }
+
+        .navbar {
+            background: #1e3a8a;
+            padding: 15px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        h1 {
+            color: #1e3a8a;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .route {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="navbar">
+    <div><b>🚍 LivnoBus</b></div>
+    <div>
+        <a href="/">Linije</a>
+        <a href="/vozni-red/">Vozni red</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <h1>Linije</h1>
+
+    {% for linija in linije %}
+        <div class="card">
+            <div class="route">
+                {{ linija.polaziste }} → {{ linija.odrediste }}
+            </div>
+            <div>{{ linija.naziv }}</div>
+        </div>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
