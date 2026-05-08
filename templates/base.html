@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LivnoBus</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f8;
+        }
+
+        .navbar {
+            background: #1e3a8a;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div><b>🚍 LivnoBus</b></div>
+    <div>
+        <a href="/">Početna</a>
+        <a href="/vozni-red/">Vozni red</a>
+        <a href="/kupi-kartu/">Kupi kartu</a>
+        <a href="/li-taxi/">LI Taxi</a>
+        <a href="/destinacije/">Destinacije</a>
+        <a href="/o-nama/">O nama</a>
+        <a href="/kontakt/">Kontakt</a>
+    </div>
+</div>
+
+<div class="container">
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+<footer>
+    © 2026 LivnoBus
+</footer>
+
+</body>
+</html>
