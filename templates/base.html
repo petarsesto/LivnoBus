@@ -10,19 +10,50 @@
             background: #f2f4f8;
         }
 
+        /* 🔶 NAVBAR */
         .navbar {
-            background: #1e3a8a;
+            background: #ff9800; /* ista narandžasta kao logo */
             color: white;
-            padding: 15px;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .navbar a {
+        /* LOGO */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
             margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-kupi {
+            background: white;
+            color: #ff9800;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .btn-kupi:hover {
+            background: #ffe0b2;
         }
 
         .container {
@@ -36,22 +67,38 @@
             padding: 10px;
             margin-top: 30px;
         }
+
+        .phone {
+            font-weight: bold;
+            margin-left: 15px;
+        }
     </style>
 </head>
 
 <body>
 
 <div class="navbar">
-    <div><b>🚍 LivnoBus</b></div>
-    <div>
+
+    <!-- 🔥 LOGO LIJEVO -->
+    <div class="logo">
+        <img src="https://livnobus.com/assets/media/share.jpg?v=202601051141" alt="LivnoBus Logo">
+    </div>
+
+    <!-- LINKOVI -->
+    <div class="nav-links">
+
         <a href="/">Početna</a>
         <a href="/vozni-red/">Vozni red</a>
-        <a href="/kupi-kartu/">Kupi kartu</a>
         <a href="/li-taxi/">LI Taxi</a>
         <a href="/destinacije/">Destinacije</a>
         <a href="/o-nama/">O nama</a>
         <a href="/kontakt/">Kontakt</a>
+
+        <span class="phone">📞 +387 63 123 456</span>
+
+        <a href="/kupi-kartu/" class="btn-kupi">🎫 Kupi kartu</a>
     </div>
+
 </div>
 
 <div class="container">
