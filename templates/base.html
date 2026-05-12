@@ -1,115 +1,213 @@
 <!DOCTYPE html>
-<html>
+<html lang="hr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LivnoBus</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
             background: #f2f4f8;
         }
 
-        /* 🔶 NAVBAR */
+        /* NAVBAR */
         .navbar {
-            background: #ff9800; /* ista narandžasta kao logo */
-            color: white;
-            padding: 12px 20px;
+            background: #ff9800;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        /* LOGO */
-        .logo {
-            display: flex;
-            align-items: center;
+            padding: 14px 30px;
         }
 
         .logo img {
-            height: 45px;
-            width: auto;
+            height: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin-left: 15px;
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            transition: 0.25s;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover {
-            text-decoration: underline;
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* 🔥 PHONE SA HOVER EFEKTOM */
+        .phone {
+            color: white;
+            font-weight: 800;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .phone:hover {
+            background: rgba(0,0,0,0.25);
+            transform: translateY(-2px);
         }
 
         .btn-kupi {
-            background: white;
-            color: #ff9800;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-weight: bold;
-            text-decoration: none;
-            margin-left: 15px;
+            background: #111;
+            color: white !important;
+            padding: 12px 20px !important;
+            border-radius: 12px;
+            font-weight: 800 !important;
+            margin-left: 10px;
+            transition: 0.3s;
         }
 
         .btn-kupi:hover {
-            background: #ffe0b2;
+            background: #000;
+            transform: translateY(-2px);
         }
 
         .container {
-            padding: 20px;
+            width: 100%;
         }
 
-        footer {
-            background: #1e3a8a;
+        /* FOOTER */
+        .footer {
+            background: #36454F;
             color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 30px;
+            padding: 60px 20px 30px;
         }
 
-        .phone {
-            font-weight: bold;
-            margin-left: 15px;
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo img {
+            height: 45px;
+            margin-bottom: 20px;
+        }
+
+        .footer h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #b0b9cc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer a:hover {
+            color: #ff9800;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            color: #7a86a0;
+        }
+
+        @media (max-width: 900px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="navbar">
+<!-- NAVBAR -->
+<header class="navbar">
 
-    <!-- 🔥 LOGO LIJEVO -->
     <div class="logo">
-        <img src="https://livnobus.com/assets/media/share.jpg?v=202601051141" alt="LivnoBus Logo">
+        <a href="/">
+            <img src="https://livnobus.com/assets/img/livno-bus.svg">
+        </a>
     </div>
 
-    <!-- LINKOVI -->
-    <div class="nav-links">
+    <nav class="nav-links">
 
         <a href="/">Početna</a>
         <a href="/vozni-red/">Vozni red</a>
         <a href="/li-taxi/">LI Taxi</a>
         <a href="/destinacije/">Destinacije</a>
         <a href="/o-nama/">O nama</a>
-        <a href="/kontakt/">Kontakt</a>
 
-        <span class="phone">📞 +387 63 123 456</span>
+        <span class="phone">📞 +387 34 206 501</span>
 
-        <a href="/kupi-kartu/" class="btn-kupi">🎫 Kupi kartu</a>
+        <a href="/kupi-kartu/" class="btn-kupi">🎫 KUPI KARTU</a>
+
+    </nav>
+
+</header>
+
+<!-- CONTENT -->
+<main class="container">
+    {% block content %}{% endblock %}
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div>
+            <div class="footer-logo">
+                <img src="https://livnobus.com/assets/img/logo-white.svg">
+            </div>
+            <p>Moderna autobusna kompanija za sigurna i udobna putovanja.</p>
+        </div>
+
+        <div>
+            <h3>Linkovi</h3>
+            <a href="/">Početna</a>
+            <a href="/vozni-red/">Vozni red</a>
+            <a href="/li-taxi/">LI Taxi</a>
+            <a href="/destinacije/">Destinacije</a>
+            <a href="/o-nama/">O nama</a>
+            <a href="/kontakt/">Kontakt</a>
+        </div>
+
+        <div>
+            <h3>Kontakt</h3>
+            <p>📞 +387 34 206 501</p>
+            <p>📧 info@livnobus.com</p>
+            <p>📍 Splitska 5, 80101 Livno</p>
+            <p>🕒 Radno vrijeme: 0-24h</p>
+        </div>
+
     </div>
 
-</div>
+    <div class="footer-bottom">
+        © 2026 LivnoBus — Sva prava zadržana
+    </div>
 
-<div class="container">
-
-    {% block content %}
-    {% endblock %}
-
-</div>
-
-<footer>
-    © 2026 LivnoBus
 </footer>
 
 </body>

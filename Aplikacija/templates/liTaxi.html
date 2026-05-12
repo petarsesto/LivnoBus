@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+/* 🔥 ISTI HERO KAO HOME */
+.hero-container {
+    width: 100%;
+    position: relative;
+    line-height: 0; 
+    background: #f4f6fb;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(-50%);
+    color: white;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 78px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    color: rgba(255,255,255,0.92);
+}
+
+.hero-btn {
+    padding: 16px 28px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    transition: 0.25s;
+    background: #ff9800;
+    color: white;
+}
+
+.hero-btn:hover {
+    background: #ea8d05;
+    transform: translateY(-2px);
+}
+
+@media(max-width: 900px){
+    .hero-content{
+        left: 20px;
+    }
+
+    .hero-content h1{
+        font-size: 42px;
+    }
+}
+
+</style>
+
+<!-- HERO (IDENTIČAN HOME) -->
+<div class="hero-container">
+
+    <img src="https://livnobus.com/assets/photos/billboard/big/23/06/22/1687423392-da-putovanje-bude-uzivanje.jpg?v1688044343?v=202601051141" class="hero-img">
+
+</div>
+
+{% endblock %}

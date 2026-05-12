@@ -1,206 +1,260 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<div class="hero">
-    <img src="https://bhbus.ba/wp-content/uploads/2018/11/DSC2369.jpg"
-         alt="LivnoBus">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-text">
-        <h1>Putujte sigurno,</h1>
-        <h1>putujte s nama</h1>
-
-        <p>
-            Udobna vožnja, pouzdana usluga i brojni polasci<br>na domaćim međunarodnim linijama.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="/kupi-kartu/" class="hero-btn">
-                🎫 Kupi kartu online
-            </a>
-
-            <a href="/vozni-red/" class="hero-btn secondary-btn">
-                🕒 Pogledaj vozni red
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- 🔥 NOVI MENU KARTICE -->
-<section class="menu">
-
-    <a href="/vozni-red/" class="menu-card">
-        <div class="icon">🕒</div>
-        <h3>Vozni red</h3>
-        <p>Provjeri sve polaske i dolaske autobusa</p>
-        <span class="action">Pogledaj →</span>
-    </a>
-
-    <a href="/kupi-kartu/" class="menu-card">
-        <div class="icon">🎫</div>
-        <h3>Kupi kartu</h3>
-        <p>Brzo i jednostavno naruči svoju kartu online</p>
-        <span class="action">Kupi kartu →</span>
-    </a>
-
-    <a href="/li-taxi/" class="menu-card">
-        <div class="icon">🚕</div>
-        <h3>LI Taxi</h3>
-        <p>Brza gradska vožnja dostupna 24/7</p>
-        <span class="action">Naruči taxi →</span>
-    </a>
-
-    <a href="/destinacije/" class="menu-card">
-        <div class="icon">🌍</div>
-        <h3>Destinacije</h3>
-        <p>Istraži gradove u koje vozimo</p>
-        <span class="action">Istraži →</span>
-    </a>
-
-    <a href="/kontakt/" class="menu-card">
-        <div class="icon">📞</div>
-        <h3>Kontakt</h3>
-        <p>Javi nam se za informacije i pomoć</p>
-        <span class="action">Saznaj više →</span>
-    </a>
-
-    <a href="https://play.google.com/store" target="_blank" class="menu-card app">
-        <div class="icon">📱</div>
-        <h3>Mobilna aplikacija</h3>
-        <p>Preuzmi LivnoBus aplikaciju na Play Store</p>
-        <span class="action">Preuzmi →</span>
-    </a>
-
-</section>
-
 <style>
+    /* HERO SEKCIJA */
+    .hero-container {
+        width: 100%;
+        position: relative;
+        line-height: 0; 
+        background: #f4f6fb;
+    }
 
-/* HERO */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 85vh;
-    min-height: 650px;
-    overflow: hidden;
-    border-radius: 20px;
-    margin-bottom: 40px;
-}
+    .hero-img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 80%;
-}
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-}
+    /* MENU SEKCIJA */
+    .menu-section {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto; 
+        padding: 20px 10px;
+        background: #f4f6fb;
+    }
 
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 80px;
-    transform: translateY(-50%);
-    color: white;
-    max-width: 650px;
-}
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); 
+        gap: 12px;
+    }
 
-.hero-text h1 {
-    font-size: 60px;
-    margin: 0;
-}
+    .menu-card {
+        background: white;
+        padding: 15px 10px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: #333;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        text-align: center;
+        transition: 0.3s;
+        border: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.hero-text p {
-    font-size: 18px;
-    margin: 15px 0 25px;
-}
+    .menu-card:hover {
+        transform: translateY(-5px);
+        border-color: #ff9800;
+    }
 
-/* BUTTONS */
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-}
+    .card-icon { font-size: 30px; margin-bottom: 8px; }
 
-.hero-btn {
-    background: #facc15;
-    color: black;
-    padding: 12px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
+    .menu-card h3 { margin-bottom: 5px; color: #1e3a8a; font-size: 15px; }
 
-.secondary-btn {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-}
+    .menu-card p { font-size: 12px; color: #666; margin: 0; }
 
-/* MENU CARDS */
-.menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
+    /* POPULAR SECTION */
+    .popular-section {
+        width: 100%;
+        max-width: 1400px;
+        margin: 40px auto;
+        padding: 0 10px;
+    }
 
-.menu-card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    text-decoration: none;
-    color: black;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: 0.25s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 180px;
-}
+    .popular-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #1e3a8a;
+        font-weight: bold;
+    }
 
-.menu-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
+    .popular-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
 
-.icon {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
+    .popular-card {
+        background: white;
+        border-radius: 18px;
+        overflow: hidden;
+        text-decoration: none;
+        color: #333;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
 
-.menu-card h3 {
-    margin: 0;
-    color: #1e3a8a;
-}
+    .popular-card:hover {
+        transform: translateY(-6px);
+    }
 
-.menu-card p {
-    font-size: 14px;
-    color: #555;
-    margin: 10px 0;
-}
+    .popular-card img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+    }
 
-.action {
-    margin-top: auto;
-    font-weight: bold;
-    color: #1e3a8a;
-}
+    .popular-content {
+        padding: 12px;
+    }
 
-/* APP CARD */
-.menu-card.app {
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
-    color: white;
-}
+    .popular-content h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: #1e3a8a;
+    }
 
-.menu-card.app h3,
-.menu-card.app p,
-.menu-card.app .action {
-    color: white;
-}
+    /* 🔥 CIJENA POVEĆANA + IKONICA */
+    .price {
+        font-weight: bold;
+        color: #ff9800;
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+
+    .price::before {
+        content: "🕒 ";
+    }
+
+    /* BUTTON */
+    .popular-btn {
+        display: inline-block;
+        background: #111;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.25s;
+    }
+
+    .popular-btn:hover {
+        background: #2b2b2b;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 1100px) {
+        .menu-grid { grid-template-columns: repeat(3, 1fr); }
+        .popular-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+        .menu-grid { grid-template-columns: repeat(2, 1fr); }
+        .popular-grid { grid-template-columns: 1fr; }
+    }
 
 </style>
+
+<!-- HERO -->
+<div class="hero-container">
+    <img src="https://livnobus.com/assets/photos/billboard/big/23/06/22/1687423382-da-putovanje-bude-uzivanje.jpg?v1688044335" class="hero-img">
+</div>
+
+<!-- MENU -->
+<section class="menu-section">
+    <div class="menu-grid">
+
+        <a href="/vozni-red/" class="menu-card">
+            <span class="card-icon">🕒</span>
+            <h3>Vozni red</h3>
+            <p>Provjerite polaske i dolaske na svim linijama.</p>
+        </a>
+
+        <a href="/kupi-kartu/" class="menu-card">
+            <span class="card-icon">🎫</span>
+            <h3>Kupi kartu</h3>
+            <p>Kupite svoju kartu brzo i jednostavno online.</p>
+        </a>
+
+        <a href="/li-taxi/" class="menu-card">
+            <span class="card-icon">🚕</span>
+            <h3>LI Taxi</h3>
+            <p>Brz, siguran i udoban prijevoz. Dostupan 0-24h.</p>
+        </a>
+
+        <a href="/destinacije/" class="menu-card">
+            <span class="card-icon">🌍</span>
+            <h3>Destinacije</h3>
+            <p>Putuje preko 50+ destinacija u BiH i Europi.</p>
+        </a>
+
+        <a href="/o-nama/" class="menu-card">
+            <span class="card-icon">🚍</span>
+            <h3>O nama</h3>
+            <p>Upoznajte našu kompaniju, tim i standarde sigurnog putovanja.</p>
+        </a>
+
+        <a href="/kontakt/" class="menu-card">
+            <span class="card-icon">📞</span>
+            <h3>Kontakt</h3>
+            <p>Kontaktirajte nas za informacije, rezervacije i podršku.</p>
+        </a>
+
+    </div>
+</section>
+
+<!-- POPULARNE LINIJE -->
+<section class="popular-section">
+
+    <div class="popular-title">Popularne linije</div>
+
+    <div class="popular-grid">
+
+        <div class="popular-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Split_080620-133710-IMG_0968x.jpg">
+            <div class="popular-content">
+                <h3>Livno → Split</h3>
+                <p class="price">18 KM</p>
+                <a href="/kupi-kartu/" class="popular-btn">🎫 Kupi kartu</a>
+            </div>
+        </div>
+
+        <div class="popular-card">
+            <img src="https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt55a5707d873aef0d/66f2b89ff7c532d3859ffe7f/iStock-1410808226-MOBILE-HEADER.jpg">
+            <div class="popular-content">
+                <h3>Livno → München</h3>
+                <p class="price">137 KM</p>
+                <a href="/kupi-kartu/" class="popular-btn">🎫 Kupi kartu</a>
+            </div>
+        </div>
+
+        <div class="popular-card">
+            <img src="https://i.natgeofe.com/n/a11e9ead-955f-4a4e-977c-d1b2f104ee75/zagrebgettyimages-1144074611hr_16x9.jpg">
+            <div class="popular-content">
+                <h3>Livno → Zagreb</h3>
+                <p class="price">80 KM</p>
+                <a href="/kupi-kartu/" class="popular-btn">🎫 Kupi kartu</a>
+            </div>
+        </div>
+
+        <div class="popular-card">
+            <img src="https://forbes.n1info.ba/wp-content/uploads/2024/10/sarajevo100-scaled.jpg">
+            <div class="popular-content">
+                <h3>Livno → Sarajevo</h3>
+                <p class="price">36 KM</p>
+                <a href="/kupi-kartu/" class="popular-btn">🎫 Kupi kartu</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}

@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+body {
+    background: #f4f6fb;
+    font-family: Arial, sans-serif;
+}
+
+.schedule {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.day-box {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.date {
+    font-size: 22px;
+    font-weight: 900;
+    color: #ff9800;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.line {
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background: #f9fafc;
+    transition: 0.2s;
+}
+
+.line:hover {
+    background: #eef2ff;
+    transform: translateY(-2px);
+}
+
+.route {
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 5px;
+}
+
+.time {
+    font-size: 18px;
+    font-weight: 900;
+    color: #ff9800;
+    text-decoration: none;
+}
+
+.time:hover {
+    color: #111;
+}
+
+.price {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+@media (max-width: 1000px) {
+    .days-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+<div class="schedule">
+
+<div class="days-grid">
+
+<!-- ================= 12.05 ================= -->
+<div class="day-box">
+    <div class="date">12.05.2026</div>
+
+    <div class="line"><div class="route">Livno → Mostar</div><a class="time" href="/kupi-kartu/">06:00</a><div class="price">22 KM</div></div>
+    <div class="line"><div class="route">Livno → Split</div><a class="time" href="/kupi-kartu/">06:45</a><div class="price">18 KM</div></div>
+    <div class="line"><div class="route">Livno → Sarajevo</div><a class="time" href="/kupi-kartu/">07:10</a><div class="price">36 KM</div></div>
+    <div class="line"><div class="route">Livno → Jajce</div><a class="time" href="/kupi-kartu/">08:15</a><div class="price">20 KM</div></div>
+    <div class="line"><div class="route">Livno → Zagreb</div><a class="time" href="/kupi-kartu/">09:20</a><div class="price">80 KM</div></div>
+    <div class="line"><div class="route">Livno → Tuzla</div><a class="time" href="/kupi-kartu/">10:30</a><div class="price">55 KM</div></div>
+    <div class="line"><div class="route">Livno → Banja Luka</div><a class="time" href="/kupi-kartu/">11:15</a><div class="price">45 KM</div></div>
+    <div class="line"><div class="route">Livno → Zenica</div><a class="time" href="/kupi-kartu/">12:10</a><div class="price">40 KM</div></div>
+    <div class="line"><div class="route">Livno → München</div><a class="time" href="/kupi-kartu/">15:40</a><div class="price">137 KM</div></div>
+    <div class="line"><div class="route">Livno → Split</div><a class="time" href="/kupi-kartu/">17:50</a><div class="price">18 KM</div></div>
+</div>
+
+<!-- ================= 13.05 ================= -->
+<div class="day-box">
+    <div class="date">13.05.2026</div>
+
+    <div class="line"><div class="route">Livno → Sarajevo</div><a class="time" href="/kupi-kartu/">06:10</a><div class="price">36 KM</div></div>
+    <div class="line"><div class="route">Livno → Split</div><a class="time" href="/kupi-kartu/">06:40</a><div class="price">18 KM</div></div>
+    <div class="line"><div class="route">Livno → Mostar</div><a class="time" href="/kupi-kartu/">07:00</a><div class="price">22 KM</div></div>
+    <div class="line"><div class="route">Livno → Zagreb</div><a class="time" href="/kupi-kartu/">08:30</a><div class="price">80 KM</div></div>
+    <div class="line"><div class="route">Livno → Banja Luka</div><a class="time" href="/kupi-kartu/">09:10</a><div class="price">45 KM</div></div>
+    <div class="line"><div class="route">Livno → Jajce</div><a class="time" href="/kupi-kartu/">10:45</a><div class="price">20 KM</div></div>
+    <div class="line"><div class="route">Livno → Tuzla</div><a class="time" href="/kupi-kartu/">11:30</a><div class="price">55 KM</div></div>
+    <div class="line"><div class="route">Livno → Zenica</div><a class="time" href="/kupi-kartu/">12:20</a><div class="price">40 KM</div></div>
+    <div class="line"><div class="route">Livno → Split</div><a class="time" href="/kupi-kartu/">15:20</a><div class="price">18 KM</div></div>
+    <div class="line"><div class="route">Livno → München</div><a class="time" href="/kupi-kartu/">17:20</a><div class="price">137 KM</div></div>
+</div>
+
+<!-- ================= 14.05 ================= -->
+<div class="day-box">
+    <div class="date">14.05.2026</div>
+
+    <div class="line"><div class="route">Livno → Zagreb</div><a class="time" href="/kupi-kartu/">06:05</a><div class="price">80 KM</div></div>
+    <div class="line"><div class="route">Livno → Mostar</div><a class="time" href="/kupi-kartu/">06:50</a><div class="price">22 KM</div></div>
+    <div class="line"><div class="route">Livno → Sarajevo</div><a class="time" href="/kupi-kartu/">07:25</a><div class="price">36 KM</div></div>
+    <div class="line"><div class="route">Livno → Split</div><a class="time" href="/kupi-kartu/">08:00</a><div class="price">18 KM</div></div>
+    <div class="line"><div class="route">Livno → Jajce</div><a class="time" href="/kupi-kartu/">09:30</a><div class="price">20 KM</div></div>
+    <div class="line"><div class="route">Livno → Banja Luka</div><a class="time" href="/kupi-kartu/">10:20</a><div class="price">45 KM</div></div>
+    <div class="line"><div class="route">Livno → Tuzla</div><a class="time" href="/kupi-kartu/">11:10</a><div class="price">55 KM</div></div>
+    <div class="line"><div class="route">Livno → Zenica</div><a class="time" href="/kupi-kartu/">12:40</a><div class="price">40 KM</div></div>
+    <div class="line"><div class="route">Livno → Split</div><a class="time" href="/kupi-kartu/">15:10</a><div class="price">18 KM</div></div>
+    <div class="line"><div class="route">Livno → München</div><a class="time" href="/kupi-kartu/">17:40</a><div class="price">137 KM</div></div>
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
