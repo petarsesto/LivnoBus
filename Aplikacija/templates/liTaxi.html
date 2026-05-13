@@ -4,88 +4,239 @@
 
 <style>
 
-/* 🔥 ISTI HERO KAO HOME */
-.hero-container {
-    width: 100%;
-    position: relative;
-    line-height: 0; 
-    background: #f4f6fb;
+/* HERO */
+.hero-container{
+    width:100%;
+    position:relative;
+    line-height:0;
+    background:#f4f6fb;
 }
 
-.hero-img {
-    width: 100%;
-    height: auto;
-    display: block;
+.hero-img{
+    width:100%;
+    height:auto;
+    display:block;
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
+/* CONTENT */
+.taxi-wrapper{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px;
 }
 
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 90px;
-    transform: translateY(-50%);
-    color: white;
-    max-width: 700px;
+.taxi-info{
+    background:white;
+    padding:50px;
+    border-radius:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
-.hero-content h1 {
-    font-size: 78px;
-    line-height: 1.05;
-    margin-bottom: 25px;
-    font-weight: 800;
+.taxi-info h1{
+    font-size:54px;
+    color:#0b1b3a;
+    margin-bottom:25px;
+    font-weight:800;
 }
 
-.hero-content p {
-    font-size: 22px;
-    line-height: 1.7;
-    margin-bottom: 35px;
-    color: rgba(255,255,255,0.92);
+.taxi-info p{
+    font-size:18px;
+    line-height:1.9;
+    color:#555;
+    margin-bottom:25px;
 }
 
-.hero-btn {
-    padding: 16px 28px;
-    border-radius: 14px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 17px;
-    transition: 0.25s;
-    background: #ff9800;
-    color: white;
+/* APP SECTION (SAME STYLE AS TEXT BOX) */
+.app-section{
+    background:white;
+    padding:50px;
+    border-radius:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+    margin-top:40px;
+    text-align:center;
 }
 
-.hero-btn:hover {
-    background: #ea8d05;
-    transform: translateY(-2px);
+.app-section h2{
+    font-size:40px;
+    color:#0b1b3a;
+    margin-bottom:30px;
+    font-weight:800;
 }
 
-@media(max-width: 900px){
-    .hero-content{
-        left: 20px;
+/* APP BUTTONS */
+.app-buttons{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.app-btn{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 28px;
+    border-radius:18px;
+    text-decoration:none;
+    font-weight:700;
+    transition:0.25s;
+    font-size:17px;
+}
+
+.google-btn{
+    background:#111;
+    color:white;
+}
+
+.google-btn:hover{
+    background:#2b2b2b;
+    transform:translateY(-3px);
+}
+
+.apple-btn{
+    background:#ff9800;
+    color:white;
+}
+
+.apple-btn:hover{
+    background:#ea8c04;
+    transform:translateY(-3px);
+}
+
+/* VIDEO */
+.video-section{
+    margin-top:20px;
+}
+
+.video-title{
+    font-size:38px;
+    color:#0b1b3a;
+    margin-bottom:25px;
+    font-weight:800;
+    text-align:center;
+}
+
+.video-box{
+    overflow:hidden;
+    border-radius:28px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
+
+.video-box video{
+    width:100%;
+    display:block;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .taxi-info{
+        padding:30px 22px;
     }
 
-    .hero-content h1{
-        font-size: 42px;
+    .taxi-info h1{
+        font-size:38px;
+    }
+
+    .taxi-info p{
+        font-size:16px;
+    }
+
+    .video-title{
+        font-size:30px;
+    }
+
+    .app-section{
+        padding:30px 22px;
+    }
+
+    .app-section h2{
+        font-size:28px;
+    }
+
+    .app-buttons{
+        flex-direction:column;
+        align-items:center;
     }
 }
 
 </style>
 
-<!-- HERO (IDENTIČAN HOME) -->
+<!-- HERO -->
 <div class="hero-container">
-
     <img src="https://livnobus.com/assets/photos/billboard/big/23/06/22/1687423392-da-putovanje-bude-uzivanje.jpg?v1688044343?v=202601051141" class="hero-img">
-
 </div>
+
+<!-- CONTENT -->
+<section class="taxi-wrapper">
+
+    <div class="taxi-info">
+
+        <h1>Li Taxi</h1>
+
+        <p>
+            Li Taxi je nova taxi kompanija koja pruža usluge prijevoza putnika na području grada Livna.
+            Kompanija se ponosi svojim modernim i čistim vozilima te profesionalnim vozačima koji su
+            spremni ispuniti sve vaše zahtjeve u vezi s prijevozom.
+        </p>
+
+        <p>
+            Također, Li Taxi koristi najnoviju tehnologiju u svom poslovanju, što omogućuje brzu i učinkovitu
+            uslugu za svoje korisnike. Ako tražite pouzdan i udoban prijevoz u gradu Livnu,
+            Li Taxi je pravi izbor za vas!
+        </p>
+
+        <p>
+            Li Taxi nudi konkurentne cijene za svoje usluge, a također omogućuje i online rezervaciju vozila
+            putem mobilne aplikacije i web stranice (uskoro).
+        </p>
+
+        <p>
+            Taxi je dostupan 7 dana u tjednu (radnim danima i nedjeljom do 23:30h,
+            petkom i subotom do 03:00h), tako da uvijek možete računati na njihovu uslugu kada vam je potrebna.
+        </p>
+
+        <p>
+            Li Taxi također nudi usluge prijevoza za poslovne klijente, koji mogu koristiti njihove usluge
+            za prijevoz svojih zaposlenika ili poslovnih partnera.
+            Sve u svemu, Li Taxi je kvalitetna taxi kompanija koju svakako treba isprobati
+            ako vam je potreban pouzdan i udoban prijevoz u gradu Livnu.
+        </p>
+
+    </div>
+
+    <!-- APP SECTION -->
+    <div class="app-section">
+
+        <h2>Preuzmi aplikaciju</h2>
+
+        <div class="app-buttons">
+
+            <a href="https://play.google.com/store/apps/details?id=com.litaxi.user" class="app-btn google-btn" target="_blank">
+                📱 Preuzmi za Android
+            </a>
+
+            <a href="https://apps.apple.com/hr/app/li-taxi/id6449975532" class="app-btn apple-btn" target="_blank">
+                🍎 Preuzmi za iPhone
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-section">
+
+        <h2 class="video-title">Kako nazvati Li Taxi?</h2>
+
+        <div class="video-box">
+            <video controls poster="https://livnobus.com/assets/photos/billboard/big/23/06/22/1687423392-da-putovanje-bude-uzivanje.jpg?v1688044343?v=202601051141">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}
