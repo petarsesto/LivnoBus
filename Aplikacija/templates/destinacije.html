@@ -90,22 +90,17 @@ body{
     transform:translateY(-2px);
 }
 
-/* TABLET */
+/* RESPONSIVE */
 @media(max-width:1200px){
-
     .dest-grid{
         grid-template-columns:repeat(3,1fr);
     }
-
 }
 
-/* MOBILE */
 @media(max-width:850px){
-
     .dest-grid{
         grid-template-columns:1fr;
     }
-
 }
 
 </style>
@@ -114,216 +109,125 @@ body{
 
     <div class="dest-grid">
 
-        <!-- 1 -->
+        <!-- Mostar -->
         <div class="dest-card">
-
-            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1200&auto=format&fit=crop">
+            <img src="https://media.cntraveller.com/photos/650c037b9a4941357e144469/4:3/w_1884,h_1413,c_limit/Mostar,%20Bosnia%20and%20Herzegovina-GettyImages-909655800.jpeg">
 
             <div class="dest-content">
-
                 <h3>Mostar</h3>
+                <p>Redovna linija Livno – Mostar uz udobno i sigurno putovanje.</p>
 
-                <p>
-                    Svakodnevna autobusna linija prema Mostaru uz sigurno i udobno putovanje.
-                </p>
-
-                <a href="#" class="dest-btn">
-                    Saznaj više
-                </a>
-
+                <a href="{% url 'mostar' %}" class="dest-btn">Saznaj više</a>
             </div>
-
         </div>
 
-        <!-- 2 -->
+        <!-- Split -->
         <div class="dest-card">
-
-            <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1200&auto=format&fit=crop">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Split_080620-133710-IMG_0968x.jpg">
 
             <div class="dest-content">
-
                 <h3>Split</h3>
+                <p>Brza linija prema Jadranu i gradu Splitu.</p>
 
-                <p>
-                    Brza i moderna autobusna linija prema hrvatskoj obali i gradu Splitu.
-                </p>
-
-                <a href="#" class="dest-btn">
-                    Saznaj više
-                </a>
-
+                <a href="{% url 'split' %}" class="dest-btn">Saznaj više</a>
             </div>
-
         </div>
 
-        <!-- 3 -->
+        <!-- Sarajevo -->
         <div class="dest-card">
-
-            <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=1200&auto=format&fit=crop">
+            <img src="https://forbes.n1info.ba/wp-content/uploads/2024/10/sarajevo100-scaled.jpg">
 
             <div class="dest-content">
-
                 <h3>Sarajevo</h3>
+                <p>Udobno putovanje prema glavnom gradu BiH.</p>
 
-                <p>
-                    Putujte udobno prema glavnom gradu Bosne i Hercegovine.
-                </p>
-
-                <a href="#" class="dest-btn">
-                    Saznaj više
-                </a>
-
+                <a href="{% url 'sarajevo' %}" class="dest-btn">Saznaj više</a>
             </div>
-
         </div>
 
-        <!-- 4 -->
+        <!-- Jajce -->
         <div class="dest-card">
-
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Jajce_vodopad.jpg/330px-Jajce_vodopad.jpg">
 
             <div class="dest-content">
-
                 <h3>Jajce</h3>
+                <p>Redovne dnevne linije prema Jajcu.</p>
 
-                <p>
-                    Redovna autobusna linija za Jajce sa više polazaka tijekom tjedna.
-                </p>
-
-                <a href="#" class="dest-btn">
-                    Saznaj više
-                </a>
-
+                <a href="{% url 'jajce' %}" class="dest-btn">Saznaj više</a>
             </div>
-
         </div>
 
-        <!-- 5 -->
+        <!-- Zagreb -->
         <div class="dest-card">
-
-            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop">
+            <img src="https://i.natgeofe.com/n/a11e9ead-955f-4a4e-977c-d1b2f104ee75/zagrebgettyimages-1144074611hr_16x9.jpg">
 
             <div class="dest-content">
-
                 <h3>Zagreb</h3>
+                <p>Međunarodna linija prema Zagrebu.</p>
 
-                <p>
-                    Sigurno i udobno međunarodno putovanje prema Zagrebu.
-                </p>
-
-                <a href="#" class="dest-btn">
-                    Saznaj više
-                </a>
-
+                <a href="{% url 'zagreb' %}" class="dest-btn">Saznaj više</a>
             </div>
-
         </div>
 
-        <!-- 6 -->
+        <!-- Tuzla -->
         <div class="dest-card">
-
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+            <img src="https://www.visit-croatia.info/wp-content/uploads/sites/133/tuzla-centre.jpg">
 
             <div class="dest-content">
-
                 <h3>Tuzla</h3>
+                <p>Komforna vožnja prema Tuzli.</p>
 
-                <p>
-                    Moderna linija prema Tuzli uz udobna i klimatizirana vozila.
-                </p>
-
-                <a href="#" class="dest-btn">
-                    Saznaj više
-                </a>
-
+                <a href="{% url 'tuzla' %}" class="dest-btn">Saznaj više</a>
             </div>
-
         </div>
 
-        <!-- 7 -->
+        <!-- Banja Luka -->
         <div class="dest-card">
-
-            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop">
+            <img src="https://www.visit-croatia.info/wp-content/uploads/sites/133/banja-luka-hd.jpg">
 
             <div class="dest-content">
-
                 <h3>Banja Luka</h3>
+                <p>Redovna linija prema Banjoj Luci.</p>
 
-                <p>
-                    Putujte prema Banjoj Luci uz profesionalnu uslugu Livno Busa.
-                </p>
-
-                <a href="#" class="dest-btn">
-                    Saznaj više
-                </a>
-
+                <a href="{% url 'banjaluka' %}" class="dest-btn">Saznaj više</a>
             </div>
-
         </div>
 
-        <!-- 8 -->
+        <!-- Zenica -->
         <div class="dest-card">
-
-            <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1200&auto=format&fit=crop">
+            <img src="https://www.tourismbih.com/wp-content/uploads/2019/02/Visit_Zenica_Tourism.jpeg">
 
             <div class="dest-content">
-
                 <h3>Zenica</h3>
+                <p>Brze i sigurne dnevne linije.</p>
 
-                <p>
-                    Redovna autobusna linija prema Zenici svaki dan.
-                </p>
-
-                <a href="#" class="dest-btn">
-                    Saznaj više
-                </a>
-
+                <a href="{% url 'zenica' %}" class="dest-btn">Saznaj više</a>
             </div>
-
         </div>
 
-        <!-- 9 -->
+        <!-- München -->
         <div class="dest-card">
-
-            <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200&auto=format&fit=crop">
+            <img src="https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt55a5707d873aef0d/66f2b89ff7c532d3859ffe7f/iStock-1410808226-MOBILE-HEADER.jpg">
 
             <div class="dest-content">
-
                 <h3>München</h3>
+                <p>Međunarodna linija prema Njemačkoj.</p>
 
-                <p>
-                    Međunarodna autobusna linija prema Njemačkoj i gradu Münchenu.
-                </p>
-
-                <a href="#" class="dest-btn">
-                    Saznaj više
-                </a>
-
+                <a href="{% url 'munchen' %}" class="dest-btn">Saznaj više</a>
             </div>
-
         </div>
 
-        <!-- 10 -->
-        <!-- 10 -->
-<div class="dest-card">
+        <!-- Augsburg -->
+        <div class="dest-card">
+            <img src="https://www.discover-bavaria.com/ausflugsziele/2742/image-thumb__2742__open-graph/augsburgMoodbild_21.be274e6c.jpg">
 
-    <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=1200&auto=format&fit=crop">
+            <div class="dest-content">
+                <h3>Augsburg</h3>
+                <p>Putovanje prema njemačkom gradu Augsburgu.</p>
 
-    <div class="dest-content">
-
-        <h3>Augsburg</h3>
-
-        <p>
-            Međunarodna autobusna linija prema njemačkom gradu Augsburgu uz udobno putovanje.
-        </p>
-
-        <a href="#" class="dest-btn">
-            Saznaj više
-        </a>
-
-    </div>
-
-</div>  
+                <a href="{% url 'augsburg' %}" class="dest-btn">Saznaj više</a>
+            </div>
+        </div>
 
     </div>
 

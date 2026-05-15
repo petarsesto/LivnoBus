@@ -9,4 +9,14 @@ urlpatterns = [
     path('kupi-kartu/', views.kupiKartu),
     path('li-taxi/', views.liTaxi),
     path('destinacije/', views.destinacije),
+    path('mostar/', views.mostar, name='mostar'),
+    path('split/', views.split, name='split'),
+    path('sarajevo/', views.sarajevo, name="sarajevo"),
+    path('jajce/', views.jajce, name='jajce'),
+    path('zagreb/', views.zagreb, name='zagreb'),
+    path('tuzla/', views.tuzla, name="tuzla"),
+    path('banjaluka/', views.banjaluka, name='banjaluka'),
+    path('zenica/', views.zenica, name='zenica'),
+    path('munchen/', views.munchen, name="munchen"),
+    path('augsburg/', views.augsburg, name="augsburg")
 ]
