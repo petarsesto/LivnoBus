@@ -1,0 +1,332 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+body{
+    background:#f4f6fb;
+    font-family:Arial, sans-serif;
+}
+
+/* WRAPPER */
+.dest-wrapper{
+    max-width:1400px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+/* GRID */
+.dest-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:22px;
+}
+
+/* CARD */
+.dest-card{
+    background:white;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 8px 22px rgba(0,0,0,0.07);
+    transition:0.25s;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.dest-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.12);
+}
+
+.dest-card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+/* CONTENT */
+.dest-content{
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.dest-content h3{
+    font-size:24px;
+    color:#0b1b3a;
+    margin-bottom:12px;
+    font-weight:800;
+    text-align:center;
+}
+
+.dest-content p{
+    color:#666;
+    line-height:1.7;
+    font-size:15px;
+    margin-bottom:25px;
+    text-align:center;
+    flex:1;
+}
+
+/* BUTTON */
+.dest-btn{
+    display:block;
+    width:100%;
+    padding:14px 0;
+    background:#ff9800;
+    color:white;
+    text-decoration:none;
+    border-radius:14px;
+    font-weight:700;
+    transition:0.25s;
+    text-align:center;
+}
+
+.dest-btn:hover{
+    background:#ea8c04;
+    transform:translateY(-2px);
+}
+
+/* TABLET */
+@media(max-width:1200px){
+
+    .dest-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+    .dest-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+<section class="dest-wrapper">
+
+    <div class="dest-grid">
+
+        <!-- 1 -->
+        <div class="dest-card">
+
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="dest-content">
+
+                <h3>Mostar</h3>
+
+                <p>
+                    Svakodnevna autobusna linija prema Mostaru uz sigurno i udobno putovanje.
+                </p>
+
+                <a href="#" class="dest-btn">
+                    Saznaj više
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- 2 -->
+        <div class="dest-card">
+
+            <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="dest-content">
+
+                <h3>Split</h3>
+
+                <p>
+                    Brza i moderna autobusna linija prema hrvatskoj obali i gradu Splitu.
+                </p>
+
+                <a href="#" class="dest-btn">
+                    Saznaj više
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- 3 -->
+        <div class="dest-card">
+
+            <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="dest-content">
+
+                <h3>Sarajevo</h3>
+
+                <p>
+                    Putujte udobno prema glavnom gradu Bosne i Hercegovine.
+                </p>
+
+                <a href="#" class="dest-btn">
+                    Saznaj više
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- 4 -->
+        <div class="dest-card">
+
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="dest-content">
+
+                <h3>Jajce</h3>
+
+                <p>
+                    Redovna autobusna linija za Jajce sa više polazaka tijekom tjedna.
+                </p>
+
+                <a href="#" class="dest-btn">
+                    Saznaj više
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- 5 -->
+        <div class="dest-card">
+
+            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="dest-content">
+
+                <h3>Zagreb</h3>
+
+                <p>
+                    Sigurno i udobno međunarodno putovanje prema Zagrebu.
+                </p>
+
+                <a href="#" class="dest-btn">
+                    Saznaj više
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- 6 -->
+        <div class="dest-card">
+
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="dest-content">
+
+                <h3>Tuzla</h3>
+
+                <p>
+                    Moderna linija prema Tuzli uz udobna i klimatizirana vozila.
+                </p>
+
+                <a href="#" class="dest-btn">
+                    Saznaj više
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- 7 -->
+        <div class="dest-card">
+
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="dest-content">
+
+                <h3>Banja Luka</h3>
+
+                <p>
+                    Putujte prema Banjoj Luci uz profesionalnu uslugu Livno Busa.
+                </p>
+
+                <a href="#" class="dest-btn">
+                    Saznaj više
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- 8 -->
+        <div class="dest-card">
+
+            <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="dest-content">
+
+                <h3>Zenica</h3>
+
+                <p>
+                    Redovna autobusna linija prema Zenici svaki dan.
+                </p>
+
+                <a href="#" class="dest-btn">
+                    Saznaj više
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- 9 -->
+        <div class="dest-card">
+
+            <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="dest-content">
+
+                <h3>München</h3>
+
+                <p>
+                    Međunarodna autobusna linija prema Njemačkoj i gradu Münchenu.
+                </p>
+
+                <a href="#" class="dest-btn">
+                    Saznaj više
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- 10 -->
+        <!-- 10 -->
+<div class="dest-card">
+
+    <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="dest-content">
+
+        <h3>Augsburg</h3>
+
+        <p>
+            Međunarodna autobusna linija prema njemačkom gradu Augsburgu uz udobno putovanje.
+        </p>
+
+        <a href="#" class="dest-btn">
+            Saznaj više
+        </a>
+
+    </div>
+
+</div>  
+
+    </div>
+
+</section>
+
+{% endblock %}

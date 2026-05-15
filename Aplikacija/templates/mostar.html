@@ -1,0 +1,360 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+body{
+    background:#f4f6fb;
+    font-family:Arial, sans-serif;
+}
+
+/* HERO */
+.route-hero{
+    width:100%;
+    height:430px;
+    background:
+    linear-gradient(rgba(8,20,45,0.65), rgba(8,20,45,0.65)),
+    url("https://images.unsplash.com/photo-1565008576549-57569a49371d?q=80&w=1600&auto=format&fit=crop");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.route-hero h1{
+    color:white;
+    font-size:72px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.route-hero p{
+    color:white;
+    font-size:22px;
+    opacity:0.95;
+}
+
+/* WRAPPER */
+.route-wrapper{
+    max-width:1300px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+/* INFO BOX */
+.info-box{
+    background:white;
+    border-radius:30px;
+    padding:50px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+    margin-bottom:40px;
+}
+
+.info-box h2{
+    font-size:42px;
+    color:#0b1b3a;
+    margin-bottom:25px;
+    font-weight:800;
+}
+
+.info-box p{
+    color:#666;
+    line-height:1.9;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+/* STATS */
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-bottom:45px;
+}
+
+.stat-card{
+    background:white;
+    padding:35px 25px;
+    border-radius:24px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+    transition:0.25s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+}
+
+.stat-card h3{
+    font-size:42px;
+    color:#ff9800;
+    margin-bottom:10px;
+    font-weight:900;
+}
+
+.stat-card p{
+    color:#555;
+    font-weight:700;
+}
+
+/* TIMETABLE */
+.timetable{
+    background:white;
+    border-radius:30px;
+    padding:50px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+    margin-bottom:45px;
+}
+
+.timetable h2{
+    font-size:40px;
+    color:#0b1b3a;
+    margin-bottom:30px;
+    font-weight:800;
+}
+
+.departures{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.departure-card{
+    background:#f8faff;
+    padding:25px;
+    border-radius:20px;
+    border:2px solid transparent;
+    transition:0.25s;
+}
+
+.departure-card:hover{
+    border-color:#ff9800;
+    transform:translateY(-4px);
+}
+
+.time{
+    font-size:38px;
+    font-weight:900;
+    color:#ff9800;
+    margin-bottom:10px;
+}
+
+.departure-card p{
+    color:#666;
+    margin-bottom:6px;
+}
+
+/* BUTTON */
+.book-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:14px 24px;
+    background:#ff9800;
+    color:white;
+    text-decoration:none;
+    border-radius:14px;
+    font-weight:700;
+    transition:0.25s;
+}
+
+.book-btn:hover{
+    background:#ea8c04;
+    transform:translateY(-2px);
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:24px;
+    box-shadow:0 8px 22px rgba(0,0,0,0.08);
+    transition:0.25s;
+}
+
+.gallery img:hover{
+    transform:scale(1.02);
+}
+
+/* MOBILE */
+@media(max-width:1100px){
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .departures{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:800px){
+
+    .route-hero{
+        height:320px;
+    }
+
+    .route-hero h1{
+        font-size:46px;
+    }
+
+    .route-hero p{
+        font-size:18px;
+    }
+
+    .info-box,
+    .timetable{
+        padding:30px 22px;
+    }
+
+    .info-box h2,
+    .timetable h2{
+        font-size:30px;
+    }
+
+    .info-box p{
+        font-size:16px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+<!-- HERO -->
+<section class="route-hero">
+
+    <div>
+        <h1>Livno → Mostar</h1>
+        <p>Sigurno i udobno putovanje uz Livno Bus</p>
+    </div>
+
+</section>
+
+<!-- CONTENT -->
+<section class="route-wrapper">
+
+    <!-- INFO -->
+    <div class="info-box">
+
+        <h2>Putovanje prema Mostaru</h2>
+
+        <p>
+            Livno Bus svakodnevno organizira redovne autobusne linije prema Mostaru.
+            Moderna i klimatizirana vozila omogućuju sigurno, brzo i ugodno putovanje za sve putnike.
+        </p>
+
+        <p>
+            Tijekom putovanja možete uživati u udobnim sjedalima, besplatnom WiFi internetu
+            i profesionalnoj usluzi naših vozača.
+        </p>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3>2h 20m</h3>
+            <p>Trajanje vožnje</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>22 KM</h3>
+            <p>Cijena karte</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>4</h3>
+            <p>Polaska dnevno</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>WiFi</h3>
+            <p>Besplatan internet</p>
+        </div>
+
+    </div>
+
+    <!-- TIMETABLE -->
+    <div class="timetable">
+
+        <h2>Današnji polasci</h2>
+
+        <div class="departures">
+
+            <div class="departure-card">
+
+                <div class="time">06:00</div>
+
+                <p>Livno Autobusni Kolodvor</p>
+                <p>Dolazak u Mostar: 08:20</p>
+
+                <a href="/kupi-kartu/" class="book-btn">
+                    Kupi kartu
+                </a>
+
+            </div>
+
+            <div class="departure-card">
+
+                <div class="time">10:30</div>
+
+                <p>Livno Autobusni Kolodvor</p>
+                <p>Dolazak u Mostar: 12:50</p>
+
+                <a href="/kupi-kartu/" class="book-btn">
+                    Kupi kartu
+                </a>
+
+            </div>
+
+            <div class="departure-card">
+
+                <div class="time">17:45</div>
+
+                <p>Livno Autobusni Kolodvor</p>
+                <p>Dolazak u Mostar: 20:05</p>
+
+                <a href="/kupi-kartu/" class="book-btn">
+                    Kupi kartu
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?q=80&w=1200&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?q=80&w=1200&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop">
+
+    </div>
+
+</section>
+
+{% endblock %}
