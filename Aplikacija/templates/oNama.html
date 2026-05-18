@@ -1,0 +1,452 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+body{
+    background:#f4f6fb;
+    font-family:Arial,sans-serif;
+}
+
+/* HERO */
+.about-hero{
+    width:100%;
+    height:520px;
+    background:
+    linear-gradient(rgba(7,18,40,0.72), rgba(7,18,40,0.72)),
+    url("https://livnobus.com/assets/photos/billboard/big/23/06/22/1687423369-da-putovanje-bude-uzivanje.jpg?v1688044327");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.about-hero h1{
+    color:white;
+    font-size:78px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.about-hero p{
+    color:white;
+    font-size:24px;
+    max-width:900px;
+    line-height:1.7;
+}
+
+/* WRAPPER */
+.about-wrapper{
+    max-width:1350px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+/* BOX */
+.about-box{
+    background:white;
+    border-radius:32px;
+    padding:55px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    margin-bottom:45px;
+}
+
+.about-box h2{
+    font-size:42px;
+    color:#0b1b3a;
+    margin-bottom:25px;
+    font-weight:900;
+}
+
+.about-box p{
+    font-size:18px;
+    line-height:1.9;
+    color:#555;
+    margin-bottom:22px;
+}
+
+/* STATS */
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    margin-bottom:45px;
+}
+
+.stat-card{
+    background:white;
+    border-radius:26px;
+    padding:40px 20px;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.06);
+    transition:0.25s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+}
+
+.stat-card h3{
+    font-size:48px;
+    color:#ff9800;
+    margin-bottom:12px;
+    font-weight:900;
+}
+
+.stat-card p{
+    color:#555;
+    font-weight:700;
+    font-size:16px;
+}
+
+/* VALUES */
+.values-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-bottom:45px;
+}
+
+.value-card{
+    background:white;
+    border-radius:28px;
+    padding:40px 30px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.06);
+    transition:0.25s;
+}
+
+.value-card:hover{
+    transform:translateY(-5px);
+}
+
+.value-icon{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.value-card h3{
+    font-size:28px;
+    color:#0b1b3a;
+    margin-bottom:18px;
+    font-weight:800;
+}
+
+.value-card p{
+    color:#666;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* FLEET */
+.fleet-box{
+    background:white;
+    border-radius:32px;
+    padding:55px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.fleet-box h2{
+    font-size:42px;
+    color:#0b1b3a;
+    margin-bottom:25px;
+    font-weight:900;
+}
+
+.fleet-intro{
+    color:#666;
+    line-height:1.9;
+    font-size:18px;
+    margin-bottom:35px;
+}
+
+.fleet-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.fleet-card{
+    background:#f8faff;
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 8px 22px rgba(0,0,0,0.05);
+    transition:0.25s;
+}
+
+.fleet-card:hover{
+    transform:translateY(-5px);
+}
+
+.fleet-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.fleet-content{
+    padding:30px;
+}
+
+.fleet-content h3{
+    font-size:28px;
+    color:#0b1b3a;
+    margin-bottom:18px;
+    font-weight:800;
+}
+
+.fleet-content p{
+    color:#666;
+    line-height:1.9;
+    margin-bottom:18px;
+    font-size:16px;
+}
+
+/* MOBILE */
+@media(max-width:1150px){
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .values-grid{
+        grid-template-columns:1fr;
+    }
+
+    .fleet-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:850px){
+
+    .about-hero{
+        height:380px;
+    }
+
+    .about-hero h1{
+        font-size:50px;
+    }
+
+    .about-hero p{
+        font-size:18px;
+    }
+
+    .about-box,
+    .fleet-box{
+        padding:30px 22px;
+    }
+
+    .about-box h2,
+    .fleet-box h2{
+        font-size:32px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+<!-- HERO -->
+<section class="about-hero">
+
+    <div>
+
+        <h1>O nama</h1>
+
+        <p>
+            Livno Bus već godinama povezuje Bosnu i Hercegovinu,
+            Hrvatsku i Njemačku kroz moderan, siguran i kvalitetan prijevoz putnika.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CONTENT -->
+<section class="about-wrapper">
+
+    <!-- ABOUT -->
+    <div class="about-box">
+
+        <h2>Tradicija i povjerenje</h2>
+
+        <p>
+            Livno-Bus ima misiju nastaviti dugogodišnju tradiciju pružanja usluga
+            cestovnog prijevoza putnika koju je imalo poduzeće Livnobus,
+            uz kontinuirano poboljšanje kvalitete usluge i sigurnosti putnika.
+        </p>
+
+        <p>
+            Cilj kompanije je kroz stalno unaprjeđivanje resursa, tehnologije i usluga
+            postaviti nove standarde u segmentu cestovnog prijevoza.
+            Tvrtka svakodnevno povezuje gradove Bosne i Hercegovine,
+            Hrvatske i Njemačke kroz domaće i međunarodne linije.
+        </p>
+
+        <p>
+            Uz redovne autobusne linije, Livno Bus pruža usluge turističkih putovanja,
+            organiziranih grupnih prijevoza, shuttle transfera i taxi usluga.
+        </p>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3>40+</h3>
+            <p>Voznih jedinica</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>10+</h3>
+            <p>Taxi vozila</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>EU</h3>
+            <p>Međunarodne linije</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>24/7</h3>
+            <p>Podrška putnicima</p>
+        </div>
+
+    </div>
+
+    <!-- VALUES -->
+    <div class="values-grid">
+
+        <div class="value-card">
+
+            <div class="value-icon">🛡️</div>
+
+            <h3>Sigurnost</h3>
+
+            <p>
+                Redovno održavanje vozila, stručni vozači i moderna sigurnosna oprema
+                omogućuju maksimalnu sigurnost tijekom svakog putovanja.
+            </p>
+
+        </div>
+
+        <div class="value-card">
+
+            <div class="value-icon">🚌</div>
+
+            <h3>Udobnost</h3>
+
+            <p>
+                Moderna turistička vozila nude klimatizaciju, WiFi internet,
+                ergonomska sjedala i dodatne sadržaje za ugodno putovanje.
+            </p>
+
+        </div>
+
+        <div class="value-card">
+
+            <div class="value-icon">🌍</div>
+
+            <h3>Pouzdanost</h3>
+
+            <p>
+                Dugogodišnje iskustvo i profesionalna organizacija prijevoza
+                garantiraju točnost, kvalitetu i pouzdanu uslugu.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- FLEET -->
+    <div class="fleet-box">
+
+        <h2>Vozni park</h2>
+
+        <p class="fleet-intro">
+            Vozni park prijevozničke kompanije Livno-Bus obuhvaća raznovrsna i suvremena vozila
+            prilagođena različitim vrstama prijevoza — od individualnih transfera,
+            turističkih putovanja i shuttle usluga do međunarodnih autobusnih linija.
+            Poseban naglasak stavljen je na sigurnost, udobnost i pouzdanost putovanja.
+        </p>
+
+        <div class="fleet-grid">
+
+            <!-- CARD 1 -->
+            <div class="fleet-card">
+                
+                <img src="https://livnobus.com/assets/photos/billboard/big/23/06/22/1687423369-da-putovanje-bude-uzivanje.jpg?v1688044327">
+
+                <div class="fleet-content">
+
+                    <h3>Top klasa turističkih autobusa</h3>
+
+                    <p>
+                        Livno Bus raspolaže autobusima visoke turističke klase poput:
+                        Neoplan Skyliner, Setra S 517 HDH, Setra S 531 DT
+                        i Neoplan Tourliner modela.
+                    </p>
+
+                    <p>
+                        Ova vozila nude luksuzna sjedala, panoramske prozore,
+                        naprednu klimatizaciju, WiFi internet,
+                        USB priključke i moderne multimedijske sustave.
+                    </p>
+
+                    <p>
+                        Napredni sigurnosni sustavi uključuju:
+                        360° kamere, adaptivni tempomat,
+                        nadzor mrtvog kuta, sustav održavanja vozne trake,
+                        automatsko kočenje i elektroničku kontrolu stabilnosti.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="fleet-card">
+
+                <img src="https://livnobus.com/assets/photos/billboard/big/23/06/22/1687423392-da-putovanje-bude-uzivanje.jpg?v1688044343?v=202601051141">
+
+                <div class="fleet-content">
+
+                    <h3>Taxi, kombi i prigradski prijevoz</h3>
+
+                    <p>
+                        Kompanija posjeduje više od 10 taxi vozila
+                        opremljenih klimatizacijom, navigacijskim sustavima
+                        i suvremenim komunikacijskim rješenjima.
+                    </p>
+
+                    <p>
+                        U ponudi su i kombi modeli kapaciteta 8, 17 i 20 mjesta,
+                        idealni za transfere, shuttle prijevoz i manje grupe putnika.
+                    </p>
+
+                    <p>
+                        Prigradski autobusi omogućuju učinkovit i pouzdan svakodnevni prijevoz,
+                        uz jednostavan ulazak, veliki kapacitet putnika
+                        i prilagođenost urbanim i prigradskim rutama.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

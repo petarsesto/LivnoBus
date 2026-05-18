@@ -1,0 +1,359 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+body{
+    background:#f4f6fb;
+    font-family:Arial,sans-serif;
+}
+
+/* WRAPPER */
+.contact-wrapper{
+    max-width:1350px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+/* GRID */
+.contact-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:30px;
+    margin-bottom:40px;
+}
+
+/* BOX */
+.contact-box{
+    background:white;
+    border-radius:32px;
+    padding:50px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* TITLES */
+.contact-box h2{
+    font-size:42px;
+    color:#0b1b3a;
+    margin-bottom:25px;
+    font-weight:900;
+}
+
+/* TEXT */
+.contact-box p{
+    color:#666;
+    font-size:17px;
+    line-height:1.9;
+    margin-bottom:18px;
+}
+
+/* INFO ITEMS */
+.info-item{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    padding:20px 0;
+    border-bottom:1px solid #edf1f7;
+}
+
+.info-item:last-child{
+    border-bottom:none;
+}
+
+.info-icon{
+    width:65px;
+    height:65px;
+    border-radius:18px;
+    background:#fff4e5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    flex-shrink:0;
+}
+
+.info-content h3{
+    font-size:24px;
+    color:#0b1b3a;
+    margin-bottom:8px;
+    font-weight:800;
+}
+
+.info-content p{
+    margin:0;
+    color:#666;
+    line-height:1.8;
+}
+
+/* FORM */
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:18px 20px;
+    border:none;
+    border-radius:18px;
+    background:#f7f9fc;
+    font-size:16px;
+    outline:none;
+    transition:0.25s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    background:#eef3ff;
+}
+
+.contact-form textarea{
+    min-height:180px;
+    resize:none;
+}
+
+.contact-btn{
+    border:none;
+    padding:18px;
+    border-radius:18px;
+    background:#ff9800;
+    color:white;
+    font-size:17px;
+    font-weight:800;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.contact-btn:hover{
+    background:#ea8c04;
+    transform:translateY(-2px);
+}
+
+/* STATS */
+.contact-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    margin-top:20px;
+}
+
+.stat-card{
+    background:white;
+    border-radius:26px;
+    padding:35px 20px;
+    text-align:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.06);
+    transition:0.25s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+}
+
+.stat-card h3{
+    font-size:44px;
+    color:#ff9800;
+    margin-bottom:10px;
+    font-weight:900;
+}
+
+.stat-card p{
+    color:#555;
+    font-weight:700;
+    font-size:15px;
+}
+
+/* MAP */
+.map-box{
+    margin-top:45px;
+    background:white;
+    border-radius:32px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.map-box iframe{
+    width:100%;
+    height:450px;
+    border:none;
+}
+
+/* MOBILE */
+@media(max-width:1100px){
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:800px){
+
+    .contact-box{
+        padding:30px 22px;
+    }
+
+    .contact-box h2{
+        font-size:32px;
+    }
+
+    .contact-stats{
+        grid-template-columns:1fr;
+    }
+
+    .info-item{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+
+<!-- CONTENT -->
+<section class="contact-wrapper">
+
+    <div class="contact-grid">
+
+        <!-- LEFT -->
+        <div class="contact-box">
+
+            <h2>Kontakt informacije</h2>
+
+            <p>
+                Naš tim vam stoji na raspolaganju za sva pitanja vezana uz autobusne linije,
+                kupovinu karata, grupna putovanja i prijevoz putnika.
+            </p>
+
+            <div class="info-item">
+
+                <div class="info-icon">📍</div>
+
+                <div class="info-content">
+                    <h3>Adresa</h3>
+                    <p>
+                        Turistička agencija Li-Bus d.o.o.<br>
+                        Splitska 5, 80101 Livno<br>
+                        Bosna i Hercegovina
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="info-icon">📞</div>
+
+                <div class="info-content">
+                    <h3>Telefon</h3>
+                    <p>
+                        +387 34 206 501<br>
+                        +387 34 206 502
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="info-icon">✉️</div>
+
+                <div class="info-content">
+                    <h3>Email</h3>
+                    <p>
+                        info@livnobus.com
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="info-item">
+
+                <div class="info-icon">🕒</div>
+
+                <div class="info-content">
+                    <h3>Radno vrijeme</h3>
+                    <p>
+                        Ponedjeljak – Nedjelja<br>
+                        07:00 – 22:00
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="contact-box">
+
+            <h2>Pošaljite upit</h2>
+
+            <p>
+                Ispunite obrazac i naš tim će vam odgovoriti u najkraćem mogućem roku.
+            </p>
+
+            <form class="contact-form">
+
+                <input type="text" placeholder="Vaše ime">
+
+                <input type="email" placeholder="Vaša email adresa">
+
+                <input type="text" placeholder="Naslov poruke">
+
+                <textarea placeholder="Vaša poruka..."></textarea>
+
+                <button type="submit" class="contact-btn">
+                    Pošalji poruku
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- STATS -->
+    <div class="contact-stats">
+
+        <div class="stat-card">
+            <h3>10+</h3>
+            <p>Destinacija</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>40+</h3>
+            <p>Voznih jedinica</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>24/7</h3>
+            <p>Podrška putnicima</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>EU</h3>
+            <p>Međunarodne linije</p>
+        </div>
+
+    </div>
+
+    <!-- MAP -->
+    <div class="map-box">
+
+        <iframe
+            src="https://www.google.com/maps?q=Livno%20Bus&output=embed"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</section>
+
+{% endblock %}

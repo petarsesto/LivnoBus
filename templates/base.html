@@ -8,204 +8,304 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Montserrat',sans-serif;
         }
 
-        body {
-            background: #f2f4f8;
+        body{
+            background:#f2f4f8;
         }
 
         /* NAVBAR */
-        .navbar {
-            background: #ff9800;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 30px;
+
+        .navbar{
+            background:#ff9800;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:14px 30px;
+            position:sticky;
+            top:0;
+            z-index:999;
         }
 
-        .logo img {
-            height: 23px;
+        .logo img{
+            height:23px;
         }
 
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 5px;
+        .nav-links{
+            display:flex;
+            align-items:center;
+            gap:5px;
         }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            padding: 10px 15px;
-            border-radius: 10px;
-            transition: 0.25s;
-            text-transform: uppercase;
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+            font-weight:700;
+            font-size:14px;
+            padding:10px 15px;
+            border-radius:10px;
+            transition:0.25s;
+            text-transform:uppercase;
         }
 
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.2);
+        .nav-links a:hover{
+            background:rgba(255,255,255,0.2);
         }
 
-        /* 🔥 PHONE SA HOVER EFEKTOM */
-        .phone {
-            color: white;
-            font-weight: 800;
-            padding: 10px 15px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.25s;
+        /* PHONE */
+
+        .phone{
+            color:white;
+            font-weight:800;
+            padding:10px 15px;
+            border-radius:10px;
+            cursor:pointer;
+            transition:0.25s;
+            text-decoration:none;
+            display:flex;
+            align-items:center;
         }
 
-        .phone:hover {
-            background: rgba(0,0,0,0.25);
-            transform: translateY(-2px);
+        .phone:hover{
+            background:rgba(0,0,0,0.25);
+            transform:translateY(-2px);
         }
 
-        .btn-kupi {
-            background: #111;
-            color: white !important;
-            padding: 12px 20px !important;
-            border-radius: 12px;
-            font-weight: 800 !important;
-            margin-left: 10px;
-            transition: 0.3s;
+        /* BUTTON */
+
+        .btn-kupi{
+            background:#111;
+            color:white !important;
+            padding:12px 20px !important;
+            border-radius:12px;
+            font-weight:800 !important;
+            margin-left:10px;
+            transition:0.3s;
         }
 
         .btn-kupi:hover {
-            background: #000;
+            background: #2b2b2b;
             transform: translateY(-2px);
         }
 
-        .container {
-            width: 100%;
+        /* CONTENT */
+
+        .container{
+            width:100%;
+            min-height:70vh;
         }
 
         /* FOOTER */
-        .footer {
-            background: #36454F;
-            color: white;
-            padding: 60px 20px 30px;
+
+        .footer{
+            background:#36454F;
+            color:white;
+            padding:60px 20px 30px;
         }
 
-        .footer-container {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 40px;
+        .footer-container{
+            max-width:1200px;
+            margin:auto;
+            display:grid;
+            grid-template-columns:1.5fr 1fr 1fr;
+            gap:40px;
         }
 
-        .footer-logo img {
-            height: 45px;
-            margin-bottom: 20px;
+        .footer-logo img{
+            height:45px;
+            margin-bottom:20px;
         }
 
-        .footer h3 {
-            margin-bottom: 20px;
+        .footer h3{
+            margin-bottom:20px;
+            font-size:22px;
         }
 
         .footer p,
-        .footer a {
-            color: #b0b9cc;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
+        .footer a{
+            color:#b0b9cc;
+            text-decoration:none;
+            display:block;
+            margin-bottom:10px;
+            line-height:1.8;
         }
 
-        .footer a:hover {
-            color: #ff9800;
+        .footer a:hover{
+            color:#ff9800;
         }
 
-        .footer-bottom {
-            text-align: center;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
-            color: #7a86a0;
+        .footer-bottom{
+            text-align:center;
+            margin-top:40px;
+            border-top:1px solid rgba(255,255,255,0.1);
+            padding-top:20px;
+            color:#7a86a0;
+            font-size:14px;
         }
 
-        @media (max-width: 900px) {
-            .footer-container {
-                grid-template-columns: 1fr;
-                text-align: center;
+        /* MOBILE */
+
+        @media(max-width:1100px){
+
+            .navbar{
+                flex-direction:column;
+                gap:15px;
+                padding:20px;
             }
+
+            .nav-links{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
         }
+
+        @media(max-width:900px){
+
+            .footer-container{
+                grid-template-columns:1fr;
+                text-align:center;
+            }
+
+        }
+
+        @media(max-width:700px){
+
+            .nav-links a,
+            .phone{
+                width:100%;
+                justify-content:center;
+                text-align:center;
+            }
+
+            .btn-kupi{
+                margin-left:0;
+            }
+
+        }
+
     </style>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
+
 <header class="navbar">
 
     <div class="logo">
+
         <a href="/">
             <img src="https://livnobus.com/assets/img/livno-bus.svg">
         </a>
+
     </div>
 
     <nav class="nav-links">
 
         <a href="/">Početna</a>
+
         <a href="/vozni-red/">Vozni red</a>
+
         <a href="/li-taxi/">Li Taxi</a>
+
         <a href="/destinacije/">Destinacije</a>
+
         <a href="/o-nama/">O nama</a>
 
-        <span class="phone">📞 +387 34 206 501</span>
+        <a href="/kontakt/" class="phone">
+            📞 +387 34 206 501
+        </a>
 
-        <a href="/kupi-kartu/" class="btn-kupi">🎫 KUPI KARTU</a>
+        <a href="/kupi-kartu/" class="btn-kupi">
+            🎫 KUPI KARTU
+        </a>
 
     </nav>
 
 </header>
 
 <!-- CONTENT -->
+
 <main class="container">
-    {% block content %}{% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
 </main>
 
 <!-- FOOTER -->
+
 <footer class="footer">
 
     <div class="footer-container">
 
+        <!-- LEFT -->
+
         <div>
+
             <div class="footer-logo">
+
                 <img src="https://livnobus.com/assets/img/logo-white.svg">
+
             </div>
-            <p>Moderna autobusna kompanija za sigurna i udobna putovanja.</p>
+
+            <p>
+                Moderna autobusna kompanija za sigurna,
+                udobna i kvalitetna putovanja širom Bosne i Hercegovine,
+                Hrvatske i Europe.
+            </p>
+
         </div>
 
+        <!-- CENTER -->
+
         <div>
+
             <h3>Linkovi</h3>
+
             <a href="/">Početna</a>
+
             <a href="/vozni-red/">Vozni red</a>
+
             <a href="/li-taxi/">Li Taxi</a>
+
             <a href="/destinacije/">Destinacije</a>
+
             <a href="/o-nama/">O nama</a>
+
             <a href="/kontakt/">Kontakt</a>
+
         </div>
 
+        <!-- RIGHT -->
+
         <div>
+
             <h3>Kontakt</h3>
+
             <p>📞 +387 34 206 501</p>
+
             <p>📧 info@livnobus.com</p>
+
             <p>📍 Splitska 5, 80101 Livno</p>
+
             <p>🕒 Radno vrijeme: 0-24h</p>
+
         </div>
 
     </div>
 
     <div class="footer-bottom">
+
         © 2026 LivnoBus — Sva prava zadržana
+
     </div>
 
 </footer>
