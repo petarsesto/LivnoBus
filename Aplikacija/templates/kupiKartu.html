@@ -10,36 +10,61 @@ body{
 }
 
 /* HERO */
+
 .ticket-hero{
     width:100%;
-    height:430px;
-    background:
-    linear-gradient(rgba(8,20,45,0.75), rgba(8,20,45,0.75)),
-    url("https://livnobus.com/assets/photos/billboard/big/23/06/22/1687423392-da-putovanje-bude-uzivanje.jpg?v1688044343?v=202601051141");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    position:relative;
+    line-height:0;
+}
+
+.ticket-hero img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* ZATAMLJENJE */
+.ticket-hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(8,20,45,0.65);
+    z-index:1;
+}
+
+/* TEKST PREKO SLIKE */
+.ticket-hero-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
     text-align:center;
+    z-index:2;
+    color:white;
     padding:20px;
+    width:90%;
 }
 
-.ticket-hero h1{
-    color:white;
-    font-size:76px;
+/* FIX: bolji razmak */
+.ticket-hero-content h1{
+    font-size:72px;
     font-weight:900;
-    margin-bottom:18px;
+    margin-bottom:25px;   /* više prostora ispod */
+    line-height:1.1;      /* da ne “guta” tekst */
 }
 
-.ticket-hero p{
-    color:white;
-    font-size:23px;
-    line-height:1.8;
-    max-width:900px;
+.ticket-hero-content p{
+    font-size:22px;
+    line-height:1.7;
+    max-width:850px;
+    margin:0 auto;
 }
 
 /* WRAPPER */
+
 .ticket-wrapper{
     max-width:1100px;
     margin:auto;
@@ -47,6 +72,7 @@ body{
 }
 
 /* BOX */
+
 .ticket-box{
     background:white;
     border-radius:34px;
@@ -69,6 +95,7 @@ body{
 }
 
 /* FORM */
+
 .ticket-form{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -126,6 +153,7 @@ body{
 }
 
 /* INFO */
+
 .ticket-info{
     margin-top:40px;
     background:#fff8ef;
@@ -151,17 +179,15 @@ body{
 }
 
 /* MOBILE */
+
 @media(max-width:850px){
 
-    .ticket-hero{
-        height:340px;
+    .ticket-hero-content h1{
+        font-size:48px;
+        margin-bottom:18px;
     }
 
-    .ticket-hero h1{
-        font-size:50px;
-    }
-
-    .ticket-hero p{
+    .ticket-hero-content p{
         font-size:18px;
     }
 
@@ -184,15 +210,13 @@ body{
 <!-- HERO -->
 <section class="ticket-hero">
 
-    <div>
+    <img src="https://livnobus.com/assets/photos/billboard/big/23/06/22/1687423382-da-putovanje-bude-uzivanje.jpg?v1688044335">
 
+    <div class="ticket-hero-content">
         <h1>Kupi kartu</h1>
-
         <p>
-            Jednostavna online rezervacija autobusnih karata
-            za domaće i međunarodne linije Livno Busa.
+            Jednostavna online rezervacija autobusnih karata za domaće i međunarodne linije Livno Busa.
         </p>
-
     </div>
 
 </section>
@@ -212,38 +236,27 @@ body{
         <form class="ticket-form" action="/uspjesna-rezervacija/">
 
             <div class="form-group">
-
                 <label>Ime i prezime</label>
-
                 <input type="text" placeholder="Unesite ime i prezime" required>
-
             </div>
 
             <div class="form-group">
-
                 <label>Email adresa</label>
-
                 <input type="email" placeholder="Unesite email adresu" required>
-
             </div>
 
             <div class="form-group">
-
                 <label>Polazište</label>
-
                 <select required>
                     <option>Livno</option>
                     <option>Mostar</option>
                     <option>Split</option>
                     <option>Sarajevo</option>
                 </select>
-
             </div>
 
             <div class="form-group">
-
                 <label>Destinacija</label>
-
                 <select required>
                     <option>Mostar</option>
                     <option>Split</option>
@@ -251,36 +264,27 @@ body{
                     <option>Zagreb</option>
                     <option>München</option>
                 </select>
-
             </div>
 
             <div class="form-group">
-
                 <label>Datum putovanja</label>
-
                 <input type="date" required>
-
             </div>
 
             <div class="form-group">
-
                 <label>Broj putnika</label>
-
                 <select required>
                     <option>1 putnik</option>
                     <option>2 putnika</option>
                     <option>3 putnika</option>
                     <option>4+ putnika</option>
                 </select>
-
             </div>
 
             <div class="full-width">
-
                 <button type="submit" class="ticket-btn">
                     🎫 Rezerviraj kartu
                 </button>
-
             </div>
 
         </form>

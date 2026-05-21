@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LivnoBus</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -17,13 +17,13 @@
         }
 
         body{
-            background:#f2f4f8;
+            background:#eef2f5;
         }
 
         /* NAVBAR */
 
         .navbar{
-            background:#ff9800;
+            background:#f59e0b;
             display:flex;
             justify-content:space-between;
             align-items:center;
@@ -40,7 +40,7 @@
         .nav-links{
             display:flex;
             align-items:center;
-            gap:5px;
+            gap:15px;
         }
 
         .nav-links a{
@@ -48,50 +48,108 @@
             text-decoration:none;
             font-weight:700;
             font-size:14px;
-            padding:10px 15px;
-            border-radius:10px;
-            transition:0.25s;
+            padding:8px 0;
+            position:relative;
             text-transform:uppercase;
         }
 
-        .nav-links a:hover{
-            background:rgba(255,255,255,0.2);
+        /* HOVER LINIJA */
+
+        .nav-links a::after{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-4px;
+            width:0%;
+            height:2px;
+            background:white;
+            transition:0.3s;
         }
 
-        /* PHONE */
+        .nav-links a:hover::after{
+            width:100%;
+        }
+
+        /* KONTAKT */
 
         .phone{
             color:white;
             font-weight:800;
-            padding:10px 15px;
-            border-radius:10px;
-            cursor:pointer;
-            transition:0.25s;
             text-decoration:none;
-            display:flex;
-            align-items:center;
+            position:relative;
+            padding:8px 0;
         }
 
-        .phone:hover{
-            background:rgba(0,0,0,0.25);
-            transform:translateY(-2px);
+        .phone::after{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-4px;
+            width:0%;
+            height:2px;
+            background:white;
+            transition:0.3s;
         }
 
-        /* BUTTON */
+        .phone:hover::after{
+            width:100%;
+        }
+
+        /* KUPI KARTU */
 
         .btn-kupi{
-            background:#111;
+            background:#1d2733;
             color:white !important;
-            padding:12px 20px !important;
+            padding:11px 18px !important;
             border-radius:12px;
             font-weight:800 !important;
             margin-left:10px;
             transition:0.3s;
         }
 
-        .btn-kupi:hover {
-            background: #2b2b2b;
-            transform: translateY(-2px);
+        .btn-kupi:hover{
+            background:#111827;
+            transform:translateY(-2px);
+        }
+
+        .btn-kupi::after{
+            display:none;
+        }
+
+        /* APP BAR */
+
+        .app-bar{
+            width:100%;
+            background:#dce7ec;
+            padding:6px 20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:18px;
+            flex-wrap:wrap;
+            border-bottom:1px solid rgba(0,0,0,0.05);
+        }
+
+        .app-text{
+            color:#0b1b3a;
+            font-size:14px;
+            font-weight:700;
+        }
+
+        .app-buttons{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .store-btn img{
+            height:32px;
+            transition:0.25s;
+            display:block;
+        }
+
+        .store-btn img:hover{
+            transform:translateY(-2px);
         }
 
         /* CONTENT */
@@ -99,12 +157,13 @@
         .container{
             width:100%;
             min-height:70vh;
+            background:#eef2f5;
         }
 
         /* FOOTER */
 
         .footer{
-            background:#36454F;
+            background:#2f3e4c;
             color:white;
             padding:60px 20px 30px;
         }
@@ -137,7 +196,7 @@
         }
 
         .footer a:hover{
-            color:#ff9800;
+            color:#f59e0b;
         }
 
         .footer-bottom{
@@ -173,24 +232,38 @@
                 text-align:center;
             }
 
+            .app-bar{
+                flex-direction:column;
+                text-align:center;
+                gap:8px;
+            }
+
         }
 
         @media(max-width:700px){
 
-            .nav-links a,
-            .phone{
+            .nav-links{
                 width:100%;
-                justify-content:center;
-                text-align:center;
+                flex-direction:column;
+                gap:12px;
             }
 
             .btn-kupi{
                 margin-left:0;
             }
 
+            .store-btn img{
+                height:28px;
+            }
+
+            .app-text{
+                font-size:13px;
+            }
+
         }
 
     </style>
+
 </head>
 
 <body>
@@ -220,7 +293,7 @@
         <a href="/o-nama/">O nama</a>
 
         <a href="/kontakt/" class="phone">
-            📞 +387 34 206 501
+            Kontakt
         </a>
 
         <a href="/kupi-kartu/" class="btn-kupi">
@@ -230,6 +303,32 @@
     </nav>
 
 </header>
+
+<!-- APP BAR -->
+
+<section class="app-bar">
+
+    <div class="app-text">
+        Preuzmite Livno-Bus aplikaciju za svoj pametni telefon
+    </div>
+
+    <div class="app-buttons">
+
+        <a href="https://play.google.com/store/apps/details?id=com.litaxi.user" class="store-btn" target="_blank">
+
+            <img src="https://developer.android.com/images/brand/hr_generic_rgb_wo_45.png">
+
+        </a>
+
+        <a href="https://apps.apple.com/hr/app/li-taxi/id6449975532" class="store-btn" target="_blank">
+
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
+
+        </a>
+
+    </div>
+
+</section>
 
 <!-- CONTENT -->
 
@@ -246,8 +345,6 @@
 
     <div class="footer-container">
 
-        <!-- LEFT -->
-
         <div>
 
             <div class="footer-logo">
@@ -263,8 +360,6 @@
             </p>
 
         </div>
-
-        <!-- CENTER -->
 
         <div>
 
@@ -284,8 +379,6 @@
 
         </div>
 
-        <!-- RIGHT -->
-
         <div>
 
             <h3>Kontakt</h3>
@@ -304,7 +397,7 @@
 
     <div class="footer-bottom">
 
-        © 2026 LivnoBus — Sva prava zadržana
+        © 2026. Turistička agencija Li-Bus d.o.o. Sva prava pridržana.
 
     </div>
 
