@@ -40,10 +40,26 @@ class TaxiRezervacija(models.Model):
         return f"{self.ime} - Taxi"
 
 
-# 📍 DESTINACIJE (ako želiš dodatne info o gradovima)
 class Destinacija(models.Model):
+
+    
     naziv = models.CharField(max_length=100)
+
     opis = models.TextField()
+
+    slika = models.URLField()
+
+    slug = models.SlugField(unique=True)
+
+    trajanje = models.CharField(max_length=50)
+
+    cijena = models.CharField(max_length=50)
+
+    polasci = models.CharField(max_length=50)
+
+    wifi = models.CharField(max_length=50)
+
+    detalji = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.naziv

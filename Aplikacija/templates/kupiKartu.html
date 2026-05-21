@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+body{
+    background:#f4f6fb;
+    font-family:Arial,sans-serif;
+}
+
+/* HERO */
+.ticket-hero{
+    width:100%;
+    height:430px;
+    background:
+    linear-gradient(rgba(8,20,45,0.75), rgba(8,20,45,0.75)),
+    url("https://livnobus.com/assets/photos/billboard/big/23/06/22/1687423392-da-putovanje-bude-uzivanje.jpg?v1688044343?v=202601051141");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.ticket-hero h1{
+    color:white;
+    font-size:76px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.ticket-hero p{
+    color:white;
+    font-size:23px;
+    line-height:1.8;
+    max-width:900px;
+}
+
+/* WRAPPER */
+.ticket-wrapper{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+/* BOX */
+.ticket-box{
+    background:white;
+    border-radius:34px;
+    padding:60px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.ticket-box h2{
+    font-size:44px;
+    color:#0b1b3a;
+    margin-bottom:18px;
+    font-weight:900;
+}
+
+.ticket-box p{
+    color:#666;
+    line-height:1.9;
+    font-size:17px;
+    margin-bottom:40px;
+}
+
+/* FORM */
+.ticket-form{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:24px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    font-size:15px;
+    color:#0b1b3a;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.form-group input,
+.form-group select{
+    padding:18px 20px;
+    border:none;
+    border-radius:18px;
+    background:#f7f9fc;
+    font-size:16px;
+    outline:none;
+    transition:0.25s;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    background:#eef3ff;
+}
+
+.full-width{
+    grid-column:1 / -1;
+}
+
+.ticket-btn{
+    width:100%;
+    border:none;
+    background:#ff9800;
+    color:white;
+    padding:20px;
+    border-radius:18px;
+    font-size:18px;
+    font-weight:800;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.ticket-btn:hover{
+    background:#ea8c04;
+    transform:translateY(-2px);
+}
+
+/* INFO */
+.ticket-info{
+    margin-top:40px;
+    background:#fff8ef;
+    border-radius:24px;
+    padding:30px;
+}
+
+.ticket-info h3{
+    color:#0b1b3a;
+    font-size:28px;
+    margin-bottom:18px;
+    font-weight:800;
+}
+
+.ticket-info ul{
+    padding-left:20px;
+}
+
+.ticket-info li{
+    color:#666;
+    line-height:1.9;
+    margin-bottom:10px;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+    .ticket-hero{
+        height:340px;
+    }
+
+    .ticket-hero h1{
+        font-size:50px;
+    }
+
+    .ticket-hero p{
+        font-size:18px;
+    }
+
+    .ticket-box{
+        padding:32px 22px;
+    }
+
+    .ticket-box h2{
+        font-size:34px;
+    }
+
+    .ticket-form{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+<!-- HERO -->
+<section class="ticket-hero">
+
+    <div>
+
+        <h1>Kupi kartu</h1>
+
+        <p>
+            Jednostavna online rezervacija autobusnih karata
+            za domaće i međunarodne linije Livno Busa.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CONTENT -->
+<section class="ticket-wrapper">
+
+    <div class="ticket-box">
+
+        <h2>Online rezervacija</h2>
+
+        <p>
+            Ispunite podatke ispod kako biste rezervirali svoju autobusnu kartu.
+            Nakon potvrde rezervacije bit ćete preusmjereni na stranicu uspješne rezervacije.
+        </p>
+
+        <form class="ticket-form" action="/uspjesna-rezervacija/">
+
+            <div class="form-group">
+
+                <label>Ime i prezime</label>
+
+                <input type="text" placeholder="Unesite ime i prezime" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Email adresa</label>
+
+                <input type="email" placeholder="Unesite email adresu" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Polazište</label>
+
+                <select required>
+                    <option>Livno</option>
+                    <option>Mostar</option>
+                    <option>Split</option>
+                    <option>Sarajevo</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Destinacija</label>
+
+                <select required>
+                    <option>Mostar</option>
+                    <option>Split</option>
+                    <option>Sarajevo</option>
+                    <option>Zagreb</option>
+                    <option>München</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Datum putovanja</label>
+
+                <input type="date" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Broj putnika</label>
+
+                <select required>
+                    <option>1 putnik</option>
+                    <option>2 putnika</option>
+                    <option>3 putnika</option>
+                    <option>4+ putnika</option>
+                </select>
+
+            </div>
+
+            <div class="full-width">
+
+                <button type="submit" class="ticket-btn">
+                    🎫 Rezerviraj kartu
+                </button>
+
+            </div>
+
+        </form>
+
+        <div class="ticket-info">
+
+            <h3>Informacije o rezervaciji</h3>
+
+            <ul>
+                <li>Rezervacija vrijedi do vremena polaska autobusa.</li>
+                <li>Molimo dođite najmanje 15 minuta prije polaska.</li>
+                <li>Kartu možete pokazati digitalno ili ispisanu.</li>
+                <li>Za dodatne informacije kontaktirajte Livno Bus podršku.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

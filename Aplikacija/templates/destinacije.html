@@ -6,38 +6,29 @@
 
 body{
     background:#f4f6fb;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
-/* WRAPPER */
 .dest-wrapper{
     max-width:1400px;
     margin:auto;
     padding:60px 20px;
 }
 
-/* GRID */
 .dest-grid{
     display:grid;
     grid-template-columns:repeat(5,1fr);
     gap:22px;
 }
 
-/* CARD */
 .dest-card{
     background:white;
     border-radius:24px;
     overflow:hidden;
     box-shadow:0 8px 22px rgba(0,0,0,0.07);
-    transition:0.25s;
     display:flex;
     flex-direction:column;
     height:100%;
-}
-
-.dest-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 14px 30px rgba(0,0,0,0.12);
 }
 
 .dest-card img{
@@ -46,7 +37,6 @@ body{
     object-fit:cover;
 }
 
-/* CONTENT */
 .dest-content{
     padding:22px;
     display:flex;
@@ -64,14 +54,13 @@ body{
 
 .dest-content p{
     color:#666;
-    line-height:1.7;
     font-size:15px;
-    margin-bottom:25px;
+    line-height:1.7;
     text-align:center;
     flex:1;
 }
 
-/* BUTTON */
+/* 🔥 FIX BUTTON POSITION */
 .dest-btn{
     display:block;
     width:100%;
@@ -81,26 +70,20 @@ body{
     text-decoration:none;
     border-radius:14px;
     font-weight:700;
-    transition:0.25s;
     text-align:center;
+    margin-top:auto;
 }
 
 .dest-btn:hover{
     background:#ea8c04;
-    transform:translateY(-2px);
 }
 
-/* RESPONSIVE */
 @media(max-width:1200px){
-    .dest-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
+    .dest-grid{grid-template-columns:repeat(3,1fr);}
 }
 
 @media(max-width:850px){
-    .dest-grid{
-        grid-template-columns:1fr;
-    }
+    .dest-grid{grid-template-columns:1fr;}
 }
 
 </style>
@@ -109,125 +92,27 @@ body{
 
     <div class="dest-grid">
 
-        <!-- Mostar -->
+        {% for destinacija in destinacije %}
+
         <div class="dest-card">
-            <img src="https://media.cntraveller.com/photos/650c037b9a4941357e144469/4:3/w_1884,h_1413,c_limit/Mostar,%20Bosnia%20and%20Herzegovina-GettyImages-909655800.jpeg">
+
+            <img src="{{ destinacija.slika }}">
 
             <div class="dest-content">
-                <h3>Mostar</h3>
-                <p>Redovna linija Livno – Mostar uz udobno i sigurno putovanje.</p>
 
-                <a href="{% url 'mostar' %}" class="dest-btn">Saznaj više</a>
+                <h3>{{ destinacija.naziv }}</h3>
+
+                <p>{{ destinacija.opis }}</p>
+
+                <a href="{% url 'destinacija_detalji' destinacija.slug %}" class="dest-btn">
+                    Saznaj više
+                </a>
+
             </div>
+
         </div>
 
-        <!-- Split -->
-        <div class="dest-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Split_080620-133710-IMG_0968x.jpg">
-
-            <div class="dest-content">
-                <h3>Split</h3>
-                <p>Brza linija prema Jadranu i gradu Splitu.</p>
-
-                <a href="{% url 'split' %}" class="dest-btn">Saznaj više</a>
-            </div>
-        </div>
-
-        <!-- Sarajevo -->
-        <div class="dest-card">
-            <img src="https://forbes.n1info.ba/wp-content/uploads/2024/10/sarajevo100-scaled.jpg">
-
-            <div class="dest-content">
-                <h3>Sarajevo</h3>
-                <p>Udobno putovanje prema glavnom gradu BiH.</p>
-
-                <a href="{% url 'sarajevo' %}" class="dest-btn">Saznaj više</a>
-            </div>
-        </div>
-
-        <!-- Jajce -->
-        <div class="dest-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Jajce_vodopad.jpg/330px-Jajce_vodopad.jpg">
-
-            <div class="dest-content">
-                <h3>Jajce</h3>
-                <p>Redovne dnevne linije prema Jajcu.</p>
-
-                <a href="{% url 'jajce' %}" class="dest-btn">Saznaj više</a>
-            </div>
-        </div>
-
-        <!-- Zagreb -->
-        <div class="dest-card">
-            <img src="https://i.natgeofe.com/n/a11e9ead-955f-4a4e-977c-d1b2f104ee75/zagrebgettyimages-1144074611hr_16x9.jpg">
-
-            <div class="dest-content">
-                <h3>Zagreb</h3>
-                <p>Međunarodna linija prema Zagrebu.</p>
-
-                <a href="{% url 'zagreb' %}" class="dest-btn">Saznaj više</a>
-            </div>
-        </div>
-
-        <!-- Tuzla -->
-        <div class="dest-card">
-            <img src="https://www.visit-croatia.info/wp-content/uploads/sites/133/tuzla-centre.jpg">
-
-            <div class="dest-content">
-                <h3>Tuzla</h3>
-                <p>Komforna vožnja prema Tuzli.</p>
-
-                <a href="{% url 'tuzla' %}" class="dest-btn">Saznaj više</a>
-            </div>
-        </div>
-
-        <!-- Banja Luka -->
-        <div class="dest-card">
-            <img src="https://www.visit-croatia.info/wp-content/uploads/sites/133/banja-luka-hd.jpg">
-
-            <div class="dest-content">
-                <h3>Banja Luka</h3>
-                <p>Redovna linija prema Banjoj Luci.</p>
-
-                <a href="{% url 'banjaluka' %}" class="dest-btn">Saznaj više</a>
-            </div>
-        </div>
-
-        <!-- Zenica -->
-        <div class="dest-card">
-            <img src="https://www.tourismbih.com/wp-content/uploads/2019/02/Visit_Zenica_Tourism.jpeg">
-
-            <div class="dest-content">
-                <h3>Zenica</h3>
-                <p>Brze i sigurne dnevne linije.</p>
-
-                <a href="{% url 'zenica' %}" class="dest-btn">Saznaj više</a>
-            </div>
-        </div>
-
-        <!-- München -->
-        <div class="dest-card">
-            <img src="https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt55a5707d873aef0d/66f2b89ff7c532d3859ffe7f/iStock-1410808226-MOBILE-HEADER.jpg">
-
-            <div class="dest-content">
-                <h3>München</h3>
-                <p>Međunarodna linija prema Njemačkoj.</p>
-
-                <a href="{% url 'munchen' %}" class="dest-btn">Saznaj više</a>
-            </div>
-        </div>
-
-        <!-- Augsburg -->
-        <div class="dest-card">
-            <img src="https://www.discover-bavaria.com/ausflugsziele/2742/image-thumb__2742__open-graph/augsburgMoodbild_21.be274e6c.jpg">
-
-            <div class="dest-content">
-                <h3>Augsburg</h3>
-                <p>Putovanje prema njemačkom gradu Augsburgu.</p>
-
-                <a href="{% url 'augsburg' %}" class="dest-btn">Saznaj više</a>
-            </div>
-        </div>
+        {% endfor %}
 
     </div>
 

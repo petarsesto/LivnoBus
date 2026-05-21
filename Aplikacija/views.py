@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Linija, VozniRed
+from django.shortcuts import render, get_object_or_404
+from .models import Linija, VozniRed, Destinacija
 
 def home(request):
     linije = Linija.objects.all()
@@ -22,7 +22,22 @@ def liTaxi(request):
     return render(request, 'liTaxi.html')
 
 def destinacije(request):
-    return render(request, 'destinacije.html')
+    destinacije = Destinacija.objects.all()
+    return render(request, 'destinacije.html', {'destinacije': destinacije})
+
+
+def destinacija_detalji(request, slug):
+
+    # 🔥 prvo probaj stari template
+    try:
+        return render(request, f"{slug}.html")
+    except:
+        # fallback na admin verziju
+        destinacija = get_object_or_404(Destinacija, slug=slug)
+
+        return render(request, "destinacijaDetalji.html", {
+            "destinacija": destinacija
+        })
 
 def mostar(request):
     return render(request, 'mostar.html')
@@ -53,3 +68,6 @@ def munchen(request):
 
 def augsburg(request):
     return render(request, 'augsburg.html')
+
+def uspjesnaRezervacija(request):
+    return render(request, "uspjesnaRezervacija.html")
