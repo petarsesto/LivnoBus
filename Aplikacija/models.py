@@ -9,6 +9,7 @@ class Linija(models.Model):
     def __str__(self):
         return f"{self.polaziste} → {self.odrediste}"
 
+
 class VozniRed(models.Model):
     linija = models.ForeignKey(Linija, on_delete=models.CASCADE)
     vrijeme_polaska = models.TimeField()
@@ -16,7 +17,8 @@ class VozniRed(models.Model):
 
     def __str__(self):
         return f"{self.linija} ({self.vrijeme_polaska})"
-    
+
+
 class Karta(models.Model):
     linija = models.ForeignKey(Linija, on_delete=models.CASCADE)
     ime_putnika = models.CharField(max_length=100)
@@ -41,24 +43,14 @@ class TaxiRezervacija(models.Model):
 
 
 class Destinacija(models.Model):
-
-    
     naziv = models.CharField(max_length=100)
-
     opis = models.TextField()
-
     slika = models.URLField()
-
     slug = models.SlugField(unique=True)
-
     trajanje = models.CharField(max_length=50)
-
     cijena = models.CharField(max_length=50)
-
     polasci = models.CharField(max_length=50)
-
     wifi = models.CharField(max_length=50)
-
     detalji = models.TextField(blank=True, null=True)
 
     def __str__(self):
